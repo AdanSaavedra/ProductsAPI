@@ -11,8 +11,11 @@
       (async () => {
         const response = await fetch("http://localhost:3000/api/v1/products");
         const data = await response.json();
+        const t = document.getElementById("t");
         console.log(data);
-        document.getElementById("t").innerHTML = JSON.stringify(data);
+        setTimeout(() => {
+          t.innerHTML = JSON.stringify(data);
+        }, 2000);
       })();
     </script>
   </body>
